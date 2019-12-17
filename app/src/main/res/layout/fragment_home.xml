@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.Home">
+    <include
+        android:id="@+id/tool"
+        layout="@layout/toolbar"/>
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_below="@id/tool"
+        android:id="@+id/checkLoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/borderradius"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/list_bus"
+            android:scaleType="fitCenter"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/routeDestination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balugo to Valencia"
+                android:textFontWeight="500"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/routeStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="Departed"
+                android:textColor="#ef2e4e"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/routeSched"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="10:11 am"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/transitAlert"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:elevation="8dp"
+        android:padding="10dp"
+        android:background="@android:color/white"
+        android:layout_below="@id/checkLoc">
+        <TextView
+            android:id="@+id/transit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/defaultColor"
+            android:text="Transit Alert"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activityRecycler"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+</RelativeLayout>
